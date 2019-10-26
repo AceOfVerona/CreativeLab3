@@ -2,11 +2,43 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles.css" />
-        <title>Soccer Update</title>
+        <title>Dota Tracker</title>
     </head>
     <body>
-        Hey how are you?
+        <img src="./Dota2picture.jpg" alt-"Dota 2 image"> </br>
+        Welcome to my Dota Website, here you can enter in a Match ID number and see which team won and how long the game lasted. Try the Id of my last game 5080120879
+        <div id ="app">
+            <h1>Enter a Match Id</h1>
+            <form v-on:click.prevent>
+                <input type="text" v-model="match_id">
+            </form>
+            <button v-on:click.prevent="dotaAPI">Search</button>
+            Searching for game #{{match_id}}</br>
+            Did the Radiant win? {{radiant_win}} </br>
+            The Game Lasted for {{duration}} Seconds </br>
+            Number of Human players in the game - {{human_players}} </br> </br>
+            
+            Or you can search by Account Id - try using mine 34629782
+            <h1>Enter User ID</h1>
+            <form v-on:click.prevent>
+                <input type="text" v-model="user_id">
+            </form>
+            <button v-on:click.prevent="userAPI">Search</button> </br>
+            The player has {{win}} wins and {{lose}} losses </br>
+            
+            <button v-on:click.prevent="mmrSearch">Search MMR</button> </br>
+            The estimated Match Making Rating of this player is {{mmr_estimate}} </br>
+            The name of this player is:
+            <h1>{{playername}}</h1>
+            <img v-bind:src="playerimg" alt= "Loading avatar picture"> </br>
+            This is their avatar picture.
+        </div>
+        <div class="footer">
+          <a href="https://github.com/AceOfVerona/CreativeLab3">Github Link here</a>
+        </div>
     </body>
     
-    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
 </html>

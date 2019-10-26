@@ -1,0 +1,23 @@
+body {
+    background-color:#383838;
+    color: #888888;
+    text-align: center;
+}
+p {
+    color:grey;
+}
+h1 {
+    color: #888888;
+}
+img {
+    width:20%;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f3f3f3;
+  color: black;
+  text-align: center;
+}
